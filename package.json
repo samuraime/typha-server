@@ -1,0 +1,33 @@
+{
+  "name": "poppy-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -r dotenv/config ./index",
+    "production": "node ./index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SamuraiMe",
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "jsonwebtoken": "^7.4.1",
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-jwt": "^3.2.2",
+    "koa-mount": "^3.0.0",
+    "koa-router": "^7.2.1",
+    "koa-static": "^4.0.1",
+    "mongoose": "^4.11.7",
+    "qiniu": "^7.0.5",
+    "winston": "^2.3.1"
+  }
+}
