@@ -15,7 +15,7 @@ const sync = async (ctx) => {
   await Promise.all(Array(1000).fill(0).map(async (_, i) => {
     const items = await list({ prefix: 2000 + i });
     const photos = await Promise.all(items.map(item => Photo.create({ url: `${CDN}/${item.key}` })));
-    await Album.create({ description: i, photos, cover: `${CDN}/${photos[0].url}` });
+    await Album.create({ description: i, photos, cover: photos[0] ? photos[0].url : '' });
   }));
 
   ctx.body = 'done';
