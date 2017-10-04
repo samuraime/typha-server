@@ -12,8 +12,8 @@ const sync = async (ctx) => {
   // const prefix = 'http://osrpgr4dd.bkt.clouddn.com';
   await Promise.all(Array(1000).fill(0).map(async (_, i) => {
     const items = await list({ prefix: 2000 + i });
-    const photos = await Promise.all(items.map(item => Photo.create({ url: item.key })));
-    await Album.create({ description: i, photos, cover: photos[0].url });
+    const photos = await Promise.all(items.map(item => Photo.create({ url: `http://osrpgr4dd.bkt.clouddn.com/${item.key}` })));
+    await Album.create({ description: i, photos, cover: `http://osrpgr4dd.bkt.clouddn.com/${photos[0].url}` });
   }));
 
   ctx.body = 'done';
