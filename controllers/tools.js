@@ -10,10 +10,12 @@ const sync = async (ctx) => {
   }
 
   // const prefix = 'http://osrpgr4dd.bkt.clouddn.com';
+  // typha-img.samuraime.com
+  const CDN = 'http://typha-img.samuraime.com';
   await Promise.all(Array(1000).fill(0).map(async (_, i) => {
     const items = await list({ prefix: 2000 + i });
-    const photos = await Promise.all(items.map(item => Photo.create({ url: `http://osrpgr4dd.bkt.clouddn.com/${item.key}` })));
-    await Album.create({ description: i, photos, cover: `http://osrpgr4dd.bkt.clouddn.com/${photos[0].url}` });
+    const photos = await Promise.all(items.map(item => Photo.create({ url: `${CDN}/${item.key}` })));
+    await Album.create({ description: i, photos, cover: `${CDN}/${photos[0].url}` });
   }));
 
   ctx.body = 'done';
