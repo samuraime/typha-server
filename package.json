@@ -1,5 +1,5 @@
 {
-  "name": "poppy-server",
+  "name": "typha-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -26,6 +26,7 @@
     "koa-mount": "^3.0.0",
     "koa-router": "^7.2.1",
     "koa-static": "^4.0.1",
+    "lodash": "^4.17.4",
     "mongoose": "^4.11.7",
     "qiniu": "^7.0.5",
     "winston": "^2.3.1"

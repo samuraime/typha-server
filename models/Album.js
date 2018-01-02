@@ -20,7 +20,7 @@ Album.statics = {
     const perPage = options.perPage || 10;
     return this.find(criteria)
       .populate('photos')
-      .sort({ createdAt: -1 })
+      .sort({ stars: -1, views: -1, createdAt: -1 })
       .limit(perPage)
       .skip(perPage * page)
       .exec();

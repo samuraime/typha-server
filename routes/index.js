@@ -16,7 +16,8 @@ const router = new Router();
 // handle all uncaught exceptions
 router.use(APIError);
 
-router.get('/sync', tools.sync);
+router.get('/tools/sync', tools.sync);
+router.get('/tools/update', tools.update);
 
 router.post('/login', users.login);
 
